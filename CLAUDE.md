@@ -212,14 +212,15 @@ New channels are added by creating a new module in `notifications/` and register
 
 ## 10. Commit Workflow
 
-- **Small, atomic commits.** Each commit should do one thing and be independently understandable.
-- **Commit message format:** `type(scope): short description`
-  - Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `style`
-  - Scope: `backend`, `frontend`, `sources`, `notifications`, `core`, `config`, etc.
-  - Example: `feat(sources): add RSS connector with fixture tests`
-- Never combine unrelated changes in a single commit.
-- Each Claude Code execution should produce one or more commits representing the completed work.
-- Do not amend or squash existing commits unless explicitly asked.
+- **Commits pequeños y atómicos.** Cada commit debe hacer una sola cosa y ser comprensible de forma independiente.
+- **Formato del mensaje de commit:** `tipo(ámbito): descripción breve en español`
+  - Tipos: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `style`
+  - Ámbito: `backend`, `frontend`, `sources`, `notifications`, `core`, `config`, etc.
+  - Ejemplo: `feat(sources): añadir conector RSS con tests de fixtures`
+- **Los mensajes de commit siempre se escriben en español.**
+- Nunca combinar cambios no relacionados en un solo commit.
+- Cada ejecución de Claude Code debe producir uno o más commits representando el trabajo completado.
+- No modificar ni aplastar commits existentes salvo que se pida explícitamente.
 
 ---
 
@@ -257,10 +258,10 @@ When executing a task in this repository, Claude Code MUST follow these rules:
 19. If a task would require breaking an architectural boundary, stop and describe the conflict instead of proceeding.
 
 ### Ending every execution
-20. **Always end with exactly 5 ideas** for improvements, next steps, or related features. Format:
+20. **Terminar siempre con exactamente 5 ideas** de mejoras, próximos pasos o funcionalidades relacionadas. **Escritas en español.** Formato:
 
 ```
-## Next Steps — 5 Ideas
+## Próximos pasos — 5 Ideas
 1. <idea>
 2. <idea>
 3. <idea>
@@ -268,7 +269,7 @@ When executing a task in this repository, Claude Code MUST follow these rules:
 5. <idea>
 ```
 
-These should be relevant to what was just built or to adjacent priorities.
+Deben ser relevantes a lo que se acaba de construir o a prioridades adyacentes.
 
 ---
 
@@ -331,7 +332,7 @@ These are acknowledged directions that should influence design decisions but sho
 | Source connectors | One module per source in `sources/`, implement `SourceConnector` protocol |
 | Notification adapters | One module per channel in `notifications/`, implement `Notifier` protocol |
 | Testing | pytest (backend), Vitest (frontend), fixtures over live calls |
-| Commits | `type(scope): description`, small and atomic |
+| Commits | `tipo(ámbito): descripción`, pequeños, atómicos, **en español** |
 | Secrets | Environment variables only, never committed |
-| Every execution ends with | Exactly 5 improvement ideas |
+| Every execution ends with | Exactamente 5 ideas de mejora **en español** |
 | Assumptions | Stated explicitly, never treated as confirmed |
